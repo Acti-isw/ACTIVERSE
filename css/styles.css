@@ -575,3 +575,15 @@ main .page-title {
   white-space: nowrap;
   border: 0;
 }
+
+.project-card__link {
+  align-self: flex-start;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.project-card__link:hover {
+  text-decoration: underline;
+}
