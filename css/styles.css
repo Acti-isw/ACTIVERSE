@@ -587,3 +587,97 @@ main .page-title {
 .project-card__link:hover {
   text-decoration: underline;
 }
+
+/* Modal de integrante */
+.member-card {
+  cursor: pointer;
+}
+
+.member-card:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.member-modal {
+  width: min(92vw, 420px);
+  max-height: 92vh;
+  padding: 2rem 1.5rem 1.75rem;
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  background: var(--color-bg);
+  color: var(--color-text);
+  overflow-y: auto;
+}
+
+.member-modal::backdrop {
+  background: rgba(0, 20, 50, 0.6);
+}
+
+.member-modal__close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.member-modal__close:hover {
+  color: var(--color-primary);
+}
+
+.member-modal__photo {
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  margin: 0 auto 1.25rem;
+  border: 4px solid var(--color-primary);
+}
+
+.member-modal__photo[hidden],
+.member-modal__placeholder[hidden] {
+  display: none;
+}
+
+.member-modal__placeholder {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  margin: 0 auto 1.25rem;
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.member-modal__name {
+  margin: 0 0 0.25rem;
+  font-size: 1.3rem;
+  color: var(--color-primary-dark);
+}
+
+.member-modal__role {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.member-modal__desc {
+  margin: 0;
+  color: var(--color-text-muted);
+}

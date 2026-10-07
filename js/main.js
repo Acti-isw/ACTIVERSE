@@ -32,4 +32,64 @@
     if (href === "" || href === "index.html") href = "index.html";
     if (href === currentPage) a.classList.add("active");
   });
+
+  // Modal con los datos de cada integrante (página Nosotros)
+  var modal = document.getElementById("member-modal");
+  if (modal && typeof modal.showModal === "function") {
+    var mPhoto = modal.querySelector(".member-modal__photo");
+    var mHolder = modal.querySelector(".member-modal__placeholder");
+    var mName = modal.querySelector(".member-modal__name");
+    var mRole = modal.querySelector(".member-modal__role");
+    var mDesc = modal.querySelector(".member-modal__desc");
+    var lastCard = null;
+
+    var openModal = function (card) {
+      var img = card.querySelector(".member-photo");
+      var holder = card.querySelector(".member-photo-placeholder");
+      var roleEl = card.querySelector(".member-role");
+      var descEl = card.querySelector("p");
+
+      mName.textContent = card.querySelector("h3").textContent;
+      mRole.textContent = roleEl ? roleEl.textContent : "";
+      mDesc.textContent = descEl ? descEl.textContent : "";
+
+      mPhoto.hidden = !img;
+      mHolder.hidden = !holder;
+      if (img) {
+        mPhoto.src = img.currentSrc || img.src;
+        mPhoto.alt = img.alt;
+      }
+      if (holder) mHolder.textContent = holder.textContent;
+
+      lastCard = card;
+      modal.showModal();
+    };
+
+    document.querySelectorAll(".member-card").forEach(function (card) {
+      card.setAttribute("tabindex", "0");
+      card.setAttribute("role", "button");
+      card.addEventListener("click", function () {
+        openModal(card);
+      });
+      card.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(card);
+        }
+      });
+    });
+
+    modal.querySelector(".member-modal__close").addEventListener("click", function () {
+      modal.close();
+    });
+
+    // Cerrar al hacer clic fuera del contenido
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) modal.close();
+    });
+
+    modal.addEventListener("close", function () {
+      if (lastCard) lastCard.focus();
+    });
+  }
 })();

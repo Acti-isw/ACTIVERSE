@@ -76,17 +76,6 @@
         <!-- Desarrolladores (A–Z) -->
         <article class="member-card">
           <img
-            src="assets/nosotros/Alberto%20F%C3%A9lix.png"
-            alt="Foto de Alberto Félix"
-            class="member-photo"
-          />
-          <h3>Alberto Félix (Galoncito)</h3>
-          <span class="member-role">Desarrollo</span>
-          <p>Desarrollador Web con JAVA Spring Boot.</p>
-        </article>
-
-        <article class="member-card">
-          <img
             src="assets/nosotros/CAVA.png"
             alt="Foto de CAVA"
             class="member-photo"
@@ -130,13 +119,6 @@
         </article>
 
         <article class="member-card">
-          <div class="member-photo-placeholder">EG</div>
-          <h3>Eruviel García</h3>
-          <span class="member-role">Desarrollo</span>
-          <p>Desarrollador Web con ASP.NET Core.</p>
-        </article>
-
-        <article class="member-card">
           <img
             src="assets/nosotros/Jes%C3%BAs%20Zazueta.png"
             alt="Foto de Jesús Zazueta"
@@ -159,13 +141,6 @@
         </article>
 
         <article class="member-card">
-          <div class="member-photo-placeholder">LE</div>
-          <h3>Luis Enríquez (Cholo)</h3>
-          <span class="member-role">Desarrollo</span>
-          <p>Desarrollador Web con NestJS, Node.js, React, Angular y Spring.</p>
-        </article>
-
-        <article class="member-card">
           <img
             src="assets/nosotros/Marco%20Antonio%20(Marquito).png"
             alt="Foto de Marco Valenzuela"
@@ -183,13 +158,6 @@
             class="member-photo"
           />
           <h3>Miguel Leyva</h3>
-          <span class="member-role">Desarrollo</span>
-          <p>Desarrollador Web con ASP.NET Core.</p>
-        </article>
-
-        <article class="member-card">
-          <div class="member-photo-placeholder">RP</div>
-          <h3>Rafael Pacheco</h3>
           <span class="member-role">Desarrollo</span>
           <p>Desarrollador Web con ASP.NET Core.</p>
         </article>
@@ -343,6 +311,15 @@
       </div>
     </section>
   </main>
+
+  <dialog id="member-modal" class="member-modal" aria-labelledby="member-modal-name">
+    <button type="button" class="member-modal__close" aria-label="Cerrar">&times;</button>
+    <img class="member-modal__photo" src="" alt="" hidden />
+    <div class="member-modal__placeholder" hidden></div>
+    <h3 id="member-modal-name" class="member-modal__name"></h3>
+    <span class="member-modal__role"></span>
+    <p class="member-modal__desc"></p>
+  </dialog>
 
   <footer class="site-footer">
     <div class="inner">
