@@ -56,7 +56,7 @@
       mPhoto.hidden = !img;
       mHolder.hidden = !holder;
       if (img) {
-        mPhoto.src = img.currentSrc || img.src;
+        mPhoto.src = img.getAttribute("data-full") || img.currentSrc || img.src;
         mPhoto.alt = img.alt;
       }
       if (holder) mHolder.textContent = holder.textContent;
